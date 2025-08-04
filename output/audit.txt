@@ -1,0 +1,15 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Tue Jul 29 10:05:05 2025
+Invocation: foremost 
+Output directory: /home/stagiaire/verbalens/app/api/output
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: stdin
+Start: Tue Jul 29 10:05:05 2025
+Length: Unknown
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Interrupt received at Tue Jul 29 10:05:12 2025

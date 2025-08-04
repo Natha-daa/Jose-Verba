@@ -1,0 +1,828 @@
+[
+    {
+      "speaker": "Micode",
+      "timestamp": "00:00",
+      "start": 0,
+      "end": 2,
+      "text": "C'est quoi l'élément déclencheur déjà pour se dire"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "00:02",
+      "start": 2,
+      "end": 5.14,
+      "text": "on va créer notre propre société face à ces géants"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "00:05",
+      "start": 5,
+      "end": 8.120000000000001,
+      "text": "quand on est déjà bien installé, confortable ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:08",
+      "start": 8,
+      "end": 9.8,
+      "text": "Je pense qu'il y a deux conversations,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:10",
+      "start": 10,
+      "end": 11.64,
+      "text": "une en septembre 2022 avec Timothée"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:11",
+      "start": 11,
+      "end": 14.06,
+      "text": "et une en novembre 2022 à NeurIPS,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:14",
+      "start": 14,
+      "end": 17.6,
+      "text": "qui est la grosse conférence de machine learning avec Guillaume,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:17",
+      "start": 17,
+      "end": 20.18,
+      "text": "où on s'est rendu compte qu'on avait des aspirations similaires"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:20",
+      "start": 20,
+      "end": 23.16,
+      "text": "de lancer une entreprise en France"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:23",
+      "start": 23,
+      "end": 25.5,
+      "text": "et qu'on connaissait pas mal de gens que ça intéresserait."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:26",
+      "start": 26,
+      "end": 29.02,
+      "text": "Et donc à partir de là, c'est un peu le début de l'engrenage."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:29",
+      "start": 29,
+      "end": 30.96,
+      "text": "C'est-à-dire qu'au début, tu te dis c'est peut-être une bonne idée."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:31",
+      "start": 31,
+      "end": 33.64,
+      "text": "Et puis au fur et à mesure, chaque jour qui passe,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:33",
+      "start": 33,
+      "end": 36.22,
+      "text": "tu t'impliques de plus en plus émotionnellement dans cette idée."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:36",
+      "start": 36,
+      "end": 38.3,
+      "text": "Puis à un moment donné, tu es un peu un point de non-retour"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:38",
+      "start": 38,
+      "end": 40.74,
+      "text": "parce qu'en fait, tu es plus dans l'idée que dans le travail"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:40",
+      "start": 40,
+      "end": 41.82,
+      "text": "dans ton entreprise actuelle."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:42",
+      "start": 42,
+      "end": 44.92,
+      "text": "Mais à partir de février, c'est vrai qu'on s'est dit"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:44",
+      "start": 44,
+      "end": 48.08,
+      "text": "là on peut avoir 15 personnes, on peut aller vite, on sait le faire."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:48",
+      "start": 48,
+      "end": 51.4,
+      "text": "On peut démontrer que l'Europe peut faire des choses intéressantes dans le domaine"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:51",
+      "start": 51,
+      "end": 53.239999999999995,
+      "text": "et peut reprendre une position de leadership."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:53",
+      "start": 53,
+      "end": 55.78,
+      "text": "Et donc c'est comme ça que ça s'est fait."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "00:55",
+      "start": 55,
+      "end": 57.14,
+      "text": "Et à partir d'avril, on s'est lancé."
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "00:57",
+      "start": 57,
+      "end": 60.3,
+      "text": "Donc Tho, il y a déjà cette idée que le projet,"
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "01:00",
+      "start": 60,
+      "end": 62.9,
+      "text": "c'est de faire de l'IA très performante européenne."
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "01:03",
+      "start": 63,
+      "end": 67.38,
+      "text": "Plus ça que juste on se sent un petit peu peut-être ralenti"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "01:07",
+      "start": 67,
+      "end": 68.84,
+      "text": "par une grosse structure au-dessus de nous,"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "01:08",
+      "start": 68,
+      "end": 71.68,
+      "text": "donc Meta ou Google, et on pense aller plus vite tout seul."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "01:11",
+      "start": 71,
+      "end": 72.34,
+      "text": "C'était quoi ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:12",
+      "start": 72,
+      "end": 73,
+      "text": "Bon, tu avais les deux."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:13",
+      "start": 73,
+      "end": 75.9,
+      "text": "En fait, Guillaume, Timothée et moi,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:16",
+      "start": 76,
+      "end": 78.78,
+      "text": "on travaillait sur ce sujet depuis à peu près 2020."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:19",
+      "start": 79,
+      "end": 82.14,
+      "text": "Et on a vu ce qu'on pouvait faire avec des petites équipes très concentrées."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:22",
+      "start": 82,
+      "end": 85.72,
+      "text": "C'est vrai qu'en 2022, ces équipes sont devenues moins concentrées"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:25",
+      "start": 85,
+      "end": 90.52,
+      "text": "parce que c'est le moment où le monde a réalisé qu'il y avait une opportunité économique"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:30",
+      "start": 90,
+      "end": 91.88,
+      "text": "autour des modèles de langue."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:32",
+      "start": 92,
+      "end": 97.08,
+      "text": "Et donc, on s'est dit qu'on pouvait bénéficier aussi de cet aspect de désorganisation"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:37",
+      "start": 97,
+      "end": 99.78,
+      "text": "pour nous être mieux organisés et fournir des choses plus rapidement."
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "01:39",
+      "start": 99,
+      "end": 102.06,
+      "text": "Ça se passe comment le tout début ?"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "01:42",
+      "start": 102,
+      "end": 104.96000000000001,
+      "text": "Vous avez chacun un peu une spécialité."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "01:45",
+      "start": 105,
+      "end": 107.46000000000001,
+      "text": "Comment vous vous organisez au tout début de la boîte ?"
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "01:47",
+      "start": 107,
+      "end": 110.08,
+      "text": "On vient tous les trois de la même formation."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:50",
+      "start": 110,
+      "end": 111.12,
+      "text": "On a fait la même chose."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:51",
+      "start": 111,
+      "end": 112.58,
+      "text": "On a tous les trois des thèses en machine learning."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:53",
+      "start": 113,
+      "end": 116.76,
+      "text": "Donc, c'est vrai qu'on s'est rapidement spécialisé avec Guillaume,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:56",
+      "start": 116,
+      "end": 118.64,
+      "text": "qui est le scientifique le plus fort d'entre nous,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "01:58",
+      "start": 118,
+      "end": 120.16,
+      "text": "qui a pris la partie scientifique."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:00",
+      "start": 120,
+      "end": 122.2,
+      "text": "Timothée, qui est plus un ingénieur"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:02",
+      "start": 122,
+      "end": 124.22,
+      "text": "et qui s'est occupé de faire toute l'infrastructure"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:04",
+      "start": 124,
+      "end": 127.84,
+      "text": "et de monter l'équipe d'ingénieurs produits aussi."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:07",
+      "start": 127,
+      "end": 132.56,
+      "text": "Et moi, j'ai assez vite fait l'aspect levée de fonds,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:12",
+      "start": 132,
+      "end": 134.04,
+      "text": "l'aspect parler avec des clients."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:14",
+      "start": 134,
+      "end": 136.2,
+      "text": "C'est des choses que j'aimais bien faire."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:16",
+      "start": 136,
+      "end": 139.18,
+      "text": "Donc, on s'est répartis comme ça assez vite."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:19",
+      "start": 139,
+      "end": 141.38,
+      "text": "Et pour revenir à comment ça démarre,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:21",
+      "start": 141,
+      "end": 142.8,
+      "text": "ça démarre par une levée de fonds, en fait,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:22",
+      "start": 142,
+      "end": 145,
+      "text": "parce qu'il faut la capacité de calcul"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:25",
+      "start": 145,
+      "end": 147.74,
+      "text": "et il faut la capacité humaine pour avancer assez vite."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:28",
+      "start": 148,
+      "end": 151,
+      "text": "Et donc, on a fait une levée de fonds en quelques semaines."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:31",
+      "start": 151,
+      "end": 154.68,
+      "text": "Et à partir de là, on était partis pour faire le premier modèle en septembre."
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "02:34",
+      "start": 154,
+      "end": 156.98000000000002,
+      "text": "C'est-à-dire qu'il n'y a pas une seule ligne de code, en fait,"
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "02:36",
+      "start": 156,
+      "end": 159.01999999999998,
+      "text": "avant même de savoir que c'est bon,"
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "02:39",
+      "start": 159,
+      "end": 160.17999999999998,
+      "text": "il y a une levée de fonds qui va se faire."
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "02:40",
+      "start": 160,
+      "end": 163,
+      "text": "C'est un domaine où il faut forcément attendre la levée de fonds"
+    },
+    {
+      "speaker": "Timote",
+      "timestamp": "02:43",
+      "start": 163,
+      "end": 164.7,
+      "text": "si on veut commencer la première..."
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "02:44",
+      "start": 164,
+      "end": 166.32,
+      "text": "Tu peux un peu parallélyser ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:46",
+      "start": 166,
+      "end": 167.23999999999998,
+      "text": "Commencer à faire du code,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:47",
+      "start": 167,
+      "end": 168.98,
+      "text": "mais à trois, tu n'as pas beaucoup de leviers."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:49",
+      "start": 169,
+      "end": 172.2,
+      "text": "Il vaut mieux avoir une petite équipe de dizaines de personnes"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:52",
+      "start": 172,
+      "end": 172.82,
+      "text": "pour aller plus vite."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:53",
+      "start": 173,
+      "end": 174.2,
+      "text": "On a commencé par la data,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:54",
+      "start": 174,
+      "end": 176.28,
+      "text": "parce qu'il faut la donner pour entraîner les modèles."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:56",
+      "start": 176,
+      "end": 179.16,
+      "text": "Donc, il y a beaucoup de travail aussi manuel là-dessus à faire."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "02:59",
+      "start": 179,
+      "end": 181.2,
+      "text": "Et Guillaume, Timothée, essentiellement,"
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "03:01",
+      "start": 181,
+      "end": 183.42,
+      "text": "avaient commencé pendant qu'on finissait la levée."
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "03:03",
+      "start": 183,
+      "end": 185.85999999999999,
+      "text": "On parle des levées de fonds."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:05",
+      "start": 185,
+      "end": 188.92,
+      "text": "Toi, tu as fait Polytechnique, Centraire de Paris, l'UNS et un doctorat."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:09",
+      "start": 189,
+      "end": 191.6,
+      "text": "Est-ce que ça aide quand même à lever des fonds"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:11",
+      "start": 191,
+      "end": 193.23999999999998,
+      "text": "alors que vous n'êtes que trois ?"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:13",
+      "start": 193,
+      "end": 196.57999999999998,
+      "text": "Ou alors, est-ce que c'est encore plus le nom méta Google ?"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:16",
+      "start": 196,
+      "end": 198.32,
+      "text": "Tu dirais que c'est quoi qui aide le plus ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:18",
+      "start": 198,
+      "end": 200.32,
+      "text": "Je pense que ce qui a aidé au démarrage,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:20",
+      "start": 200,
+      "end": 203.76,
+      "text": "c'est qu'on était crédibles sur le domaine le plus chaud du moment,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:23",
+      "start": 203,
+      "end": 204.72,
+      "text": "en 2023,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:25",
+      "start": 205,
+      "end": 207.38,
+      "text": "et qu'on avait plutôt des papiers"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:27",
+      "start": 207,
+      "end": 209.85999999999999,
+      "text": "qui étaient liés à ce domaine-là."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:30",
+      "start": 210,
+      "end": 211.14,
+      "text": "C'est-à-dire que moi, j'étais dans l'équipe"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:31",
+      "start": 211,
+      "end": 212.45999999999998,
+      "text": "qui travaillait à DeepMind là-dessus."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:33",
+      "start": 213,
+      "end": 214.27999999999997,
+      "text": "Guillaume et Timothée, ils étaient à Meta."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:34",
+      "start": 214,
+      "end": 215.55999999999997,
+      "text": "C'est eux qui ont fait de l'AMA le premier."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:36",
+      "start": 216,
+      "end": 217.73999999999998,
+      "text": "Et donc, cette crédibilité-là,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:37",
+      "start": 217,
+      "end": 220.66,
+      "text": "ce n'est pas ce qu'on a fait dans notre jeunesse à l'école."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:40",
+      "start": 220,
+      "end": 222.35999999999999,
+      "text": "C'est plutôt une crédibilité scientifique"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:42",
+      "start": 222,
+      "end": 224.94,
+      "text": "qu'on a construite dans notre première partie de carrière, on va dire."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:45",
+      "start": 225,
+      "end": 228.17999999999998,
+      "text": "Un alignement de planète avec ce qui intéresse le plus"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "03:48",
+      "start": 228,
+      "end": 230.23999999999998,
+      "text": "et les meilleures personnes pour le développer, en fait."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:50",
+      "start": 230,
+      "end": 233.7,
+      "text": "Oui, effectivement, notre crédibilité venait aussi du fait"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:53",
+      "start": 233,
+      "end": 236.07999999999998,
+      "text": "qu'on avait une excellente équipe de démarrage"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "03:56",
+      "start": 236,
+      "end": 240,
+      "text": "et qu'on pouvait démontrer qu'on saurait la recruter."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:00",
+      "start": 240,
+      "end": 242.14000000000001,
+      "text": "Et il y a ce jour qui arrive,"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:02",
+      "start": 242,
+      "end": 243.8,
+      "text": "c'est le 27 septembre 2023,"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:04",
+      "start": 244,
+      "end": 246.86,
+      "text": "où vous postez un lien sur votre compte Twitter"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:06",
+      "start": 246,
+      "end": 248.06,
+      "text": "parfaitement inactif."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:08",
+      "start": 248,
+      "end": 249.44,
+      "text": "Et c'est votre premier modèle, en fait."
+    },
+    {
+      "speaker": "unknown",
+      "timestamp": "04:09",
+      "start": 249,
+      "end": 251.4,
+      "text": "Donc, Mistral7B."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:11",
+      "start": 251,
+      "end": 253.66000000000003,
+      "text": "Le tweet est vu plus d'un million de fois."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:13",
+      "start": 253,
+      "end": 255.52,
+      "text": "Vous êtes repris par tous les médias américains,"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:15",
+      "start": 255,
+      "end": 257.94,
+      "text": "tout le monde de l'IA est en effervescence"
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:17",
+      "start": 257,
+      "end": 258.86,
+      "text": "et s'amuse avec le modèle."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:18",
+      "start": 258,
+      "end": 260.78000000000003,
+      "text": "Il est téléchargé un million de fois, mais super vite."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:21",
+      "start": 261,
+      "end": 262.34000000000003,
+      "text": "Nous, on a vu ça de l'extérieur."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:23",
+      "start": 263,
+      "end": 263.98,
+      "text": "On a vu cet engouement."
+    },
+    {
+      "speaker": "Micode",
+      "timestamp": "04:23",
+      "start": 263,
+      "end": 266.3,
+      "text": "Vous, de l'intérieur, c'était comment ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "04:26",
+      "start": 266,
+      "end": 268.70000000000005,
+      "text": "Alors déjà, le tweet, c'était une idée de Guy Aumain,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "04:28",
+      "start": 268,
+      "end": 269.86,
+      "text": "donc le chief scientist,"
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "04:30",
+      "start": 270,
+      "end": 272.34000000000003,
+      "text": "pour rendre à César ce qui appartient à César."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "04:33",
+      "start": 273,
+      "end": 275.36,
+      "text": "Parce que vous ne le publiez pas comme les autres."
+    },
+    {
+      "speaker": "Guillaume",
+      "timestamp": "04:35",
+      "start": 275,
+      "end": 276.08000000000004,
+      "text": "On ne le publie pas comme les autres."
+    }
+  ]

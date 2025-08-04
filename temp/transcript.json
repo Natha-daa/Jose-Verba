@@ -1,0 +1,39 @@
+{
+  "transcript": [
+    {
+      "speaker": "SPEAKER 3",
+      "start_time": "0:00:00",
+      "text": "Vous avez chacun un peu une spécialité, comment vous vous organisez au tout début de la boîte ?"
+    },
+    {
+      "speaker": "SPEAKER 2",
+      "start_time": "0:00:06",
+      "text": "On vient tous les trois de la même formation, on a fait la même chose, on a tous les trois des thèses en machine learning. C'est vrai qu'on s'est rapidement spécialisé avec Guillaume qui est le scientifique le plus fort d'entre nous, qui a pris la partie scientifique, Timothée qui est plus un ingénieur et qui s'est occupé de faire toute l'infrastructure"
+    },
+    {
+      "speaker": "SPEAKER 3",
+      "start_time": "0:00:23",
+      "text": "et de monter l'équipe d'ingénieurs produits aussi."
+    },
+    {
+      "speaker": "SPEAKER 2",
+      "start_time": "0:00:26",
+      "text": "Et moi, j'ai assez vite fait l'aspect levée de fond, l'aspect parler avec des clients. C'est des choses que j'aimais bien faire et donc on s'est répartis comme ça assez vite. Et pour revenir à comment ça démarre, ça démarre par une levée de fond en fait, parce qu'il faut la capacité de calcul et il faut la capacité humaine pour avancer assez vite."
+    },
+    {
+      "speaker": "SPEAKER 3",
+      "start_time": "0:00:47",
+      "text": "Et donc, on a fait une levée de fond en quelques semaines et à partir de là, on était partis pour faire le premier modèle en septembre."
+    },
+    {
+      "speaker": "SPEAKER 2",
+      "start_time": "0:00:53",
+      "text": "C'est-à-dire qu'il n'y a pas une seule ligne de code en fait, avant même de savoir que c'est bon,"
+    },
+    {
+      "speaker": "SPEAKER 1",
+      "start_time": "0:00:57",
+      "text": "il y a une levée de fond qui va se faire. C'est un domaine où il faut forcément..."
+    }
+  ]
+}

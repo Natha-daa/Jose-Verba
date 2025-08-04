@@ -1,0 +1,69 @@
+{
+  "transcript": [
+    {
+      "speaker": "Micode",
+      "start_time": "00:00",
+      "text": "Vous avez chacun un peu une spécialité, comment vous vous organisez au tout début de la boîte ?"
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:05",
+      "text": "On vient tous les trois de la même formation, on a fait la même chose, on a tous les trois des thèses en machine learning."
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:11",
+      "text": "C'est vrai qu'on s'est rapidement spécialisé avec Guillaume qui est le scientifique le plus fort d'entre nous,"
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:17",
+      "text": "qui a pris la partie scientifique, Timothée qui est plus un ingénieur et qui s'est occupé de faire toute l'infrastructure"
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:22",
+      "text": "et de monter l'équipe d'ingénieurs produits aussi."
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:26",
+      "text": "Et moi, j'ai assez vite fait l'aspect levée de fond, l'aspect parler avec des clients."
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:33",
+      "text": "C'est des choses que j'aimais bien faire et donc on s'est répartis comme ça assez vite."
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:38",
+      "text": "Et pour revenir à comment ça démarre, ça démarre par une levée de fond en fait,"
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:41",
+      "text": "parce qu'il faut la capacité de calcul et il faut la capacité humaine pour avancer assez vite."
+    },
+    {
+      "speaker": "Guillaume",
+      "start_time": "00:46",
+      "text": "Et donc, on a fait une levée de fond en quelques semaines et à partir de là, on était parti pour faire le premier modèle en septembre."
+    },
+    {
+      "speaker": "Micode",
+      "start_time": "00:53",
+      "text": "C'est-à-dire qu'il n'y a pas une seule ligne de code en fait, avant même de savoir que c'est bon,"
+    },
+    {
+      "speaker": "Micode",
+      "start_time": "00:57",
+      "text": "il y a une levée de fond qui va se faire."
+    },
+    {
+      "speaker": "Micode",
+      "start_time": "00:58",
+      "text": "C'est un domaine où il faut forcément..."
+    }
+  ]
+}

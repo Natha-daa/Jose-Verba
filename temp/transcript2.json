@@ -1,0 +1,45 @@
+{
+    "transcript": [
+      {
+        "speaker": "SPEAKER 3",
+        "start_time": "0:00:00",
+        "text": "Vous avez chacun une spécialité, comment vous vous êtes organisés au lancement de la boîte ?"
+      },
+      {
+        "speaker": "SPEAKER 2",
+        "start_time": "0:00:06",
+        "text": "On vient tous les trois du même labo, on a fait nos thèses en machine learning appliqué à l'industrie. Assez vite, Guillaume a pris la partie scientifique car c’est le plus pointu en LLM, Timothée a géré toute l’infra cloud — d’ailleurs on utilise beaucoup AWS qui est responsable de 1% de la consommation électrique mondiale."
+      },
+      {
+        "speaker": "SPEAKER 3",
+        "start_time": "0:00:23",
+        "text": "Ah oui ? 1% ? C’est énorme."
+      },
+      {
+        "speaker": "SPEAKER 2",
+        "start_time": "0:00:25",
+        "text": "Oui, et c’est encore plus vrai depuis l’explosion des modèles génératifs. Moi, je me suis concentré sur la levée de fonds et la relation investisseurs. On a eu un premier tour de table en 2023 de 5 millions d’euros, grâce notamment à une aide de France 2030 — l'État a mis en place un plan IA de 1,5 milliard pour soutenir ces projets."
+      },
+      {
+        "speaker": "SPEAKER 1",
+        "start_time": "0:00:45",
+        "text": "C’est pour ça qu’en France on dit qu’on veut être leader européen de l’intelligence artificielle ?"
+      },
+      {
+        "speaker": "SPEAKER 2",
+        "start_time": "0:00:49",
+        "text": "Exactement. Mais pour le moment on reste derrière l’Allemagne et le Royaume-Uni en termes de financement privé."
+      },
+      {
+        "speaker": "SPEAKER 3",
+        "start_time": "0:00:55",
+        "text": "Et donc, vous avez eu cette levée de fonds avant même une ligne de code ?"
+      },
+      {
+        "speaker": "SPEAKER 2",
+        "start_time": "0:00:58",
+        "text": "Oui, c’est un secteur où on ne peut pas avancer sans capacité de calcul et sans équipes solides. Donc on boucle le financement avant tout, sinon on ne peut pas prototyper un LLM de 7 milliards de paramètres."
+      }
+    ]
+  }
+  

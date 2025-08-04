@@ -1,0 +1,40 @@
+{
+    "transcript": [
+      {
+        "speaker": "Journaliste",
+        "start_time": "0:00:00",
+        "text": "Vous avez chacun une spécialité, comment vous vous êtes organisés concrètement au tout début de la création de l'entreprise ?"
+      },
+      {
+        "speaker": "CEO",
+        "start_time": "0:00:06",
+        "text": "On vient tous les trois du même laboratoire de l'École Polytechnique, on a fait nos thèses ensemble en machine learning appliqué à l'industrie. Guillaume s’est vite imposé sur la partie scientifique — il publie encore régulièrement dans NeurIPS et ACL. Timothée s’est occupé de toute l’infrastructure cloud — pour vous donner une idée, selon un rapport AWS de 2023 et les données du MIT Tech Review, AWS représenterait environ 1% de la consommation électrique mondiale."
+      },
+      {
+        "speaker": "Journaliste",
+        "start_time": "0:00:23",
+        "text": "Ah bon ? 1% ? C’est colossal tout de même."
+      },
+      {
+        "speaker": "CEO",
+        "start_time": "0:00:25",
+        "text": "Oui, et avec l’explosion des modèles génératifs, c’est encore plus vrai. Pour ma part, je gère la levée de fonds et la relation investisseurs, c’est mon domaine depuis 10 ans. Notre premier tour de table en 2023 a permis de lever 5 millions d’euros, en grande partie grâce au plan France 2030 et au programme Bpifrance Deeptech, qui met à disposition près de 1,5 milliard d’euros pour soutenir l’intelligence artificielle en France — c’est dans le rapport officiel disponible sur le site du gouvernement."
+      },
+      {
+        "speaker": "Co-Fondateur",
+        "start_time": "0:00:45",
+        "text": "Et puis, il faut dire que d’ici 2025, la France sera le premier pays d’Europe sur l’IA, c’est quasiment sûr. En plus, on sait que 90% des entreprises industrielles françaises vont utiliser l’IA générative d’ici deux ans. C’est la tendance, tout le monde le sait."
+      },
+      {
+        "speaker": "Journaliste",
+        "start_time": "0:00:52",
+        "text": "Ces chiffres sont impressionnants. Et concrètement, vous aviez déjà les fonds avant même d’écrire une ligne de code ?"
+      },
+      {
+        "speaker": "CEO",
+        "start_time": "0:00:55",
+        "text": "Exactement. Dans notre secteur, sans capacité de calcul et sans équipe solide, on ne peut rien faire. C’est pour ça qu’on lève l’argent en amont — sinon, impossible de prototyper un LLM de 7 milliards de paramètres dès le départ. C’est ce qu’on explique dans nos pitch decks, que vous pouvez d’ailleurs trouver sur notre site si ça vous intéresse."
+      }
+    ]
+  }
+  
