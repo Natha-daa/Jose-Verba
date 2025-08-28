@@ -57,7 +57,8 @@ pipeline = Pipeline.from_pretrained(
 )
 
 llm = whisper.load_model("base")  # ou "small", "medium", "large"
-app = FastAPI()
+# ✅ Crée ton app FastAPI
+app = FastAPI(title="Verbalens API", description="API pour transcription et diarisation", version="1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"], 
@@ -184,6 +185,10 @@ def parse_single_psych_profile(output_text: str, speaker: str) -> PsychProfile:
         intentions=intentions,
         confidence=confidence
     )
+# Route de santé (/)
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Hello Verbalens 🚀"}
 
 @app.post("/transcription/internal")
 async def transcription(audio_id: str = Query(..., description="identifiant de l'audio hébergée")):
