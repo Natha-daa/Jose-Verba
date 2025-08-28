@@ -56,7 +56,7 @@ pipeline = Pipeline.from_pretrained(
     use_auth_token="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"
 )
 
-llm = whisper.load_model("turbo")  # ou "small", "medium", "large"
+llm = whisper.load_model("base")  # ou "small", "medium", "large"
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
