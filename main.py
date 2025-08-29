@@ -30,7 +30,7 @@ from utils.utils import extract_speaker_embeddings, find_nearest_speaker, format
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from utils.prompt import generate_fact_check_prompt, generate_fact_extraction_prompt
-from utils.splitter import clean_json_string, split_audio
+from utils.splitter import clean_json_string
 from langchain_tavily import TavilySearch
 
 # -----------------------------
@@ -193,43 +193,33 @@ def parse_single_psych_profile(output_text: str, speaker: str) -> PsychProfile:
     )
 
 @app.post("/transcription/internal")
-async def transcription(audio_id: str = Query(..., description="identifiant de l'audio hébergé")):
+async def transcription(audio_id: str = Query(..., description="identifiant de l'audio hébergée")):
     try:
-        audio_path = os.path.join("uploads", audio_id)
-        if not os.path.exists(audio_path):
+        audio_data = os.path.join("uploads", audio_id)
+        if not os.path.exists(audio_data):
             raise HTTPException(status_code=404, detail="File not found")
-        
-        print("Audio found")
-
-        # Découper un segment si nécessaire
-        temp_segment = "temp/segment.wav"
-        split_audio(audio_path, start_time=0, segment_length=300, output_path=temp_segment)
-
-        # Transcription locale avec Whisper
-        result = llm.transcribe(temp_segment)
-        return {"text": result["text"]}
+        else:
+            print("audio found")
+            # Transcription locale avec Whisper
+            result = llm.transcribe(audio_data)
+            return {"text": result["text"]}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/diarisation/internal")
-async def diarisation(audio_id: str = Query(..., description="identifiant de l'audio hébergé"),
-                      num_speakers: int = Query(..., description="Nombre de locuteurs")):
+async def diarisation(audio_id: str = Query(..., description="identifiant de l'audio hébergée"), num_speakers: int = Query(..., description="Nombre de locuteurs")):
     try:
-        audio_path = os.path.join("uploads", audio_id)
-        if not os.path.exists(audio_path):
+        audio_data = os.path.join("uploads", audio_id)
+        if not os.path.exists(audio_data):
             raise HTTPException(status_code=404, detail="File not found")
-        
-        print("Audio found")
+        else:
+            print("audio found")
 
-        # Découper un segment si nécessaire pour tester ou éviter un fichier trop lourd
-        temp_segment = split_audio(audio_path, start_time=0, segment_length=30*1000)  # 30s
-
-        # Diarisation locale avec Whisper + SpeechBrain
-        seg = extract_speakers(llm, classifier, temp_segment, num_speakers)
-        result = write_segments(seg, 'temp/transcript.txt')
-        return JSONResponse(content=result)
-
+            # Diarisation locale avec Whisper
+            seg = extract_speakers(llm, classifier, audio_data,num_speakers)
+            result = write_segments(seg, 'temp/transcript.txt')
+            return JSONResponse(content=result)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
