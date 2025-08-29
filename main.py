@@ -213,18 +213,23 @@ async def transcription(audio_id: str = Query(..., description="identifiant de l
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.post("/diarisation/internal")
-async def diarisation(audio_id: str = Query(..., description="identifiant de l'audio hébergée"), num_speakers: int = Query(..., description="Nombre de locuteurs")):
+async def diarisation(audio_id: str = Query(..., description="identifiant de l'audio hébergé"),
+                      num_speakers: int = Query(..., description="Nombre de locuteurs")):
     try:
-        audio_data = os.path.join("uploads", audio_id)
-        if not os.path.exists(audio_data):
+        audio_path = os.path.join("uploads", audio_id)
+        if not os.path.exists(audio_path):
             raise HTTPException(status_code=404, detail="File not found")
-        else:
-            print("audio found")
+        
+        print("Audio found")
 
-            # Diarisation locale avec Whisper
-            seg = extract_speakers(llm, classifier, audio_data,num_speakers)
-            result = write_segments(seg, 'temp/transcript.txt')
-            return JSONResponse(content=result)
+        # Découper un segment si nécessaire pour tester ou éviter un fichier trop lourd
+        temp_segment = split_audio(audio_path, start_time=0, segment_length=30*1000)  # 30s
+
+        # Diarisation locale avec Whisper + SpeechBrain
+        seg = extract_speakers(llm, classifier, temp_segment, num_speakers)
+        result = write_segments(seg, 'temp/transcript.txt')
+        return JSONResponse(content=result)
+
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
