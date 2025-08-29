@@ -193,16 +193,21 @@ def parse_single_psych_profile(output_text: str, speaker: str) -> PsychProfile:
     )
 
 @app.post("/transcription/internal")
-async def transcription(audio_id: str = Query(..., description="identifiant de l'audio hébergée")):
+async def transcription(audio_id: str = Query(..., description="identifiant de l'audio hébergé")):
     try:
-        audio_data = os.path.join("uploads", audio_id)
-        if not os.path.exists(audio_data):
+        audio_path = os.path.join("uploads", audio_id)
+        if not os.path.exists(audio_path):
             raise HTTPException(status_code=404, detail="File not found")
-        else:
-            print("audio found")
-            # Transcription locale avec Whisper
-            result = llm.transcribe(audio_data)
-            return {"text": result["text"]}
+        
+        print("Audio found")
+
+        # Découper un segment si nécessaire
+        temp_segment = "temp/segment.wav"
+        split_audio(audio_path, start_time=0, segment_length=300, output_path=temp_segment)
+
+        # Transcription locale avec Whisper
+        result = llm.transcribe(temp_segment)
+        return {"text": result["text"]}
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
