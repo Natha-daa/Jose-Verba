@@ -30,7 +30,7 @@ from utils.utils import extract_speaker_embeddings, find_nearest_speaker, format
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from utils.prompt import generate_fact_check_prompt, generate_fact_extraction_prompt
-from utils.splitter import clean_json_string
+from utils.splitter import clean_json_string, split_audio
 from langchain_tavily import TavilySearch
 
 # -----------------------------
