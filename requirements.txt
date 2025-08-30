@@ -8,6 +8,7 @@ anyio==4.9.0
 asteroid-filterbanks==0.4.0
 asttokens==3.0.0
 attrs==25.3.0
+audioop-lts
 cachetools==5.5.2
 certifi==2025.7.9
 cffi==1.17.1
