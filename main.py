@@ -1,3 +1,9 @@
+import sys
+import audioop
+
+# Patch : redirige "pyaudioop" vers le vrai module standard "audioop"
+sys.modules["pyaudioop"] = audioop
+
 # fichier : main.py
 from fastapi import FastAPI, Query, HTTPException, Body, Form, status
 from pydantic import BaseModel
