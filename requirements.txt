@@ -8,6 +8,7 @@ anyio==4.9.0
 asteroid-filterbanks==0.4.0
 asttokens==3.0.0
 attrs==25.3.0
+audioop-lts
 cachetools==5.5.2
 certifi==2025.7.9
 cffi==1.17.1
@@ -33,12 +34,10 @@ fonttools==4.59.0
 frozenlist==1.7.0
 fsspec==2025.5.1
 future==1.0.0
-google-ai-generativelanguage==0.6.18
 google-api-core==2.25.1
 google-api-python-client==2.176.0
 google-auth==2.40.3
 google-auth-httplib2==0.2.0
-google-generativeai==0.8.5
 google_search_results==2.4.2
 googleapis-common-protos==1.70.0
 greenlet==3.2.3
@@ -70,6 +69,7 @@ langchain==0.3.27
 langchain-community==0.3.27
 langchain-core==0.3.72
 langchain-google-genai==2.1.8
+langchain-tavily
 langchain-text-splitters==0.3.9
 langsmith==0.4.8
 lightning==2.5.2
@@ -190,11 +190,12 @@ typing_extensions==4.14.1
 tzdata==2025.2
 uritemplate==4.2.0
 urllib3==2.5.0
-uvicorn==0.35.0
+uvicorn[standard]
 uvloop==0.21.0
 watchfiles==1.1.0
 wcwidth==0.2.13
 websockets==15.0.1
+wikipedia
 yarl==1.20.1
 yt-dlp==2025.6.30
 zstandard==0.23.0

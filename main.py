@@ -67,7 +67,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"status": "API is running"}
 
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+    
 class TranscriptionResponse(BaseModel):
     text: str
 
