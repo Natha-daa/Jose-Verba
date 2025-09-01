@@ -6,9 +6,9 @@ import requests
 from fastapi.middleware.cors import CORSMiddleware
 import os
 from typing import Union
-from fastapi import UploadFile
 import uuid
-from fastapi.responses import FileResponse
+from fastapi import UploadFile, Form
+from fastapi.responses import JSONResponse
 from utils.diarization import extract_speakers, write_segments
 from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
@@ -74,6 +74,50 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "healthy"}
+
+@app.post("/media")
+async def create_media(
+    name: str = Form(...),
+    description: str = Form(None),
+    numberSpeaker: int = Form(1),
+    audio: UploadFile = None,
+    video: UploadFile = None
+):
+    os.makedirs("uploads", exist_ok=True)
+
+    audio_link, video_link, file_size = None, None, 0
+
+    # Sauvegarde de l'audio
+    if audio:
+        audio_filename = f"{uuid.uuid4()}_{audio.filename}"
+        audio_path = os.path.join("uploads", audio_filename)
+        with open(audio_path, "wb") as f:
+            f.write(await audio.read())
+        audio_link = f"/uploads/{audio_filename}"
+        file_size = audio.size or 0
+
+    # Sauvegarde de la vidéo
+    if video:
+        video_filename = f"{uuid.uuid4()}_{video.filename}"
+        video_path = os.path.join("uploads", video_filename)
+        with open(video_path, "wb") as f:
+            f.write(await video.read())
+        video_link = f"/uploads/{video_filename}"
+        file_size = video.size or 0
+
+    # Exemple de retour JSON (tu peux l’adapter pour insérer en base avec Prisma si tu veux)
+    return JSONResponse(
+        {
+            "name": name,
+            "description": description,
+            "numberSpeaker": numberSpeaker,
+            "audioLink": audio_link,
+            "videoLink": video_link,
+            "fileSize": file_size,
+            "message": "Media uploaded successfully 🚀"
+        }
+    )
+
     
 class TranscriptionResponse(BaseModel):
     text: str
