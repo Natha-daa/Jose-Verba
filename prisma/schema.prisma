@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Media {
+  id            Int      @id @default(autoincrement())
+  name          String
+  description   String?
+  createdAt     DateTime @default(now())
+  audioLink     String?
+  fileSize      String?
+  coverLink     String?
+  videoLink     String?
+  numberSpeaker Int      @default(1)
+}
+

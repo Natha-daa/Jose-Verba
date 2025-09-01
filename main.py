@@ -40,7 +40,8 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 DB_FILE = "speakers_store/spearker_voice.db"
 
 
-load_dotenv() # Load environment variables from .env
+load_dotenv('.env.local')
+HF_TOKEN = os.getenv("HF_TOKEN")
 os.environ["SERPAPI_API_KEY"] = "17b4254cd1caa589a23ab4e13821a0784d17aa09450c3b94f1249ef3dd5313ad"
 SERPER_API_KEY = "5c51947ee6b3e5fcf45e7ff19e4652f748168e70"
 os.environ["SERPER_API_KEY"] = "5c51947ee6b3e5fcf45e7ff19e4652f748168e70"
@@ -53,7 +54,7 @@ classifier = EncoderClassifier.from_hparams(
 ).to(DEVICE)
 pipeline = Pipeline.from_pretrained(
     "pyannote/speaker-diarization-3.1",
-    use_auth_token="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"
+    use_auth_token=HF_TOKEN
 )
 
 llm = whisper.load_model("turbo")  # ou "small", "medium", "large"
