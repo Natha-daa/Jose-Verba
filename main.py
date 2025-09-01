@@ -32,6 +32,7 @@ from langchain_community.utilities import WikipediaAPIWrapper
 from utils.prompt import generate_fact_check_prompt, generate_fact_extraction_prompt
 from utils.splitter import clean_json_string
 from langchain_tavily import TavilySearch
+from prisma import Prisma
 
 # -----------------------------
 # CONFIG
@@ -75,6 +76,17 @@ def root():
 def health():
     return {"status": "healthy"}
 
+
+prisma = Prisma()
+
+@app.on_event("startup")
+async def startup():
+    await prisma.connect()
+
+@app.on_event("shutdown")
+async def shutdown():
+    await prisma.disconnect()
+
 @app.post("/media")
 async def create_media(
     name: str = Form(...),
@@ -105,19 +117,31 @@ async def create_media(
         video_link = f"/uploads/{video_filename}"
         file_size = video.size or 0
 
-    # Exemple de retour JSON (tu peux l’adapter pour insérer en base avec Prisma si tu veux)
-    return JSONResponse(
-        {
+    # Insertion dans la base via Prisma
+    media_record = await prisma.media.create(
+        data={
             "name": name,
             "description": description,
             "numberSpeaker": numberSpeaker,
             "audioLink": audio_link,
             "videoLink": video_link,
-            "fileSize": file_size,
-            "message": "Media uploaded successfully 🚀"
+            "fileSize": file_size
         }
     )
 
+    # Retour JSON
+    return JSONResponse(
+        {
+            "id": media_record.id,
+            "name": media_record.name,
+            "description": media_record.description,
+            "numberSpeaker": media_record.numberSpeaker,
+            "audioLink": media_record.audioLink,
+            "videoLink": media_record.videoLink,
+            "fileSize": media_record.fileSize,
+            "message": "Media uploaded and stored successfully 🚀"
+        }
+    )
     
 class TranscriptionResponse(BaseModel):
     text: str
