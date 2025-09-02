@@ -31,8 +31,10 @@ from utils.prompt import generate_fact_check_prompt, generate_fact_extraction_pr
 from utils.splitter import clean_json_string
 from langchain_tavily import TavilySearch
 from sqlalchemy.orm import Session
-from db import get_db, Base, engine
-import models, schemas
+import models
+import schemas
+from db import Base
+
 
 # -----------------------------
 # CONFIG
