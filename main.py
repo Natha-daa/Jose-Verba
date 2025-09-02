@@ -7,10 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from typing import Union
 import uuid
-from fastapi import UploadFile, Form
-from fastapi.responses import JSONResponse
+from fastapi import FastAPI, UploadFile, Form, Depends, HTTPException
+from fastapi.responses import JSONResponse, FileResponse
 from utils.diarization import extract_speakers, write_segments
-from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
@@ -25,14 +24,15 @@ from speechbrain.inference.speaker import EncoderClassifier
 from pyannote.audio.pipelines.speaker_verification import PretrainedSpeakerEmbedding
 from pyannote.audio import Pipeline
 from scipy.spatial.distance import cdist
-import sqlite3
 from utils.utils import extract_speaker_embeddings, find_nearest_speaker, format_time
 from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 from utils.prompt import generate_fact_check_prompt, generate_fact_extraction_prompt
 from utils.splitter import clean_json_string
 from langchain_tavily import TavilySearch
-from prisma import Prisma
+from sqlalchemy.orm import Session
+from db import get_db, Base, engine
+import models, schemas
 
 # -----------------------------
 # CONFIG
