@@ -111,7 +111,7 @@ async def create_media(
     file: UploadFile = File(...),
     db: Session = Depends(get_db)
 ):
-    upload_dir = "/app/temp"  # Remplace /app/uploads par /app/temp
+    upload_dir = "/app/temp"  # Utilisation de /app/temp comme répertoire de stockage
     file_path = os.path.join(upload_dir, file.filename)
 
     # Attente courte et vérification répétée si le répertoire n'existe pas
@@ -153,14 +153,8 @@ async def create_media(
     db.commit()
     db.refresh(new_media)
 
-    return {"message": "Média créé avec succès", "id": new_media.id", "file_path": file_path}# === ROUTE pour récupérer un fichier uploadé ===
-@app.get("/file/{file_name}")
-def get_file(file_name: str):
-    file_path = os.path.join("/app/uploads", file_name)
-    if not os.path.exists(file_path):
-        raise HTTPException(status_code=404, detail="File not found")
-    return FileResponse(path=file_path)
-
+    return {"message": "Média créé avec succès", "id": new_media.id, "file_path": file_path}
+    
 # === ROUTE GET /media pour lister tous les medias ===
 @app.get("/media", response_model=list[schemas.MediaResponse])
 def get_all_media(db: Session = Depends(get_db)):
