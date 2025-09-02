@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import os
 from typing import Union
 import uuid
-from fastapi import FastAPI, UploadFile, Form, Depends, HTTPException
+from fastapi import FastAPI, Depends, UploadFile, File, Form, HTTPException
 from fastapi.responses import JSONResponse, FileResponse
 from utils.diarization import extract_speakers, write_segments
 from dotenv import load_dotenv
@@ -114,7 +114,7 @@ async def create_media(
     upload_dir = "/app/uploads"
     file_path = os.path.join(upload_dir, file.filename)
 
-    # Attente courte et vérification répétée si le répertoire n'existe pas (Render peut prendre un moment à monter)
+    # Attente courte et vérification répétée si le répertoire n'existe pas
     max_attempts = 5
     for attempt in range(max_attempts):
         if os.path.exists(upload_dir):
@@ -154,7 +154,6 @@ async def create_media(
     db.refresh(new_media)
 
     return {"message": "Média créé avec succès", "id": new_media.id, "file_path": file_path}
-
 # === ROUTE pour récupérer un fichier uploadé ===
 @app.get("/file/{file_name}")
 def get_file(file_name: str):
