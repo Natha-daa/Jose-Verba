@@ -35,7 +35,8 @@ import models
 import schemas
 from db import Base, engine, get_db
 import uvicorn
-
+import logging
+import time
 # -----------------------------
 # CONFIG
 # -----------------------------
@@ -80,10 +81,12 @@ def load_pipeline():
 def load_model_gemini():
     return ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", google_api_key="AIzaSyAv5QViz6g3qDDiaX-jI3bzZ2HEf-7rXL0")
 
-# Crée les tables si elles n'existent pas
-Base.metadata.create_all(bind=engine)
-
 app = FastAPI()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Modèle déjà défini dans models.py
+Base.metadata.create_all(bind=engine)
 
 # CORS
 app.add_middleware(
@@ -103,51 +106,54 @@ def health():
 
 
 # === ROUTE /media ===
-@app.post("/media", response_model=schemas.MediaResponse)
+@app.post("/media")
 async def create_media(
-    name: str = Form(...),
-    description: str = Form(None),
-    numberSpeaker: int = Form(1),
-    audio: UploadFile = None,
-    video: UploadFile = None,
+    file: UploadFile = File(...),
     db: Session = Depends(get_db)
 ):
-    os.makedirs("/app/uploads", exist_ok=True)
+    upload_dir = "/app/uploads"
+    file_path = os.path.join(upload_dir, file.filename)
 
-    audio_link, video_link, file_size = None, None, 0
+    # Attente courte et vérification répétée si le répertoire n'existe pas (Render peut prendre un moment à monter)
+    max_attempts = 5
+    for attempt in range(max_attempts):
+        if os.path.exists(upload_dir):
+            if os.access(upload_dir, os.W_OK):
+                logger.info(f"Répertoire {upload_dir} accessible en écriture")
+                break
+            else:
+                logger.error(f"Pas de permission d'écriture sur {upload_dir}")
+                raise HTTPException(status_code=500, detail=f"Pas de permission d'écriture sur {upload_dir}")
+        else:
+            logger.warning(f"Répertoire {upload_dir} non trouvé, tentative {attempt + 1}/{max_attempts}")
+            time.sleep(1)  # Attendre 1 seconde avant de réessayer
+    else:
+        logger.error(f"Répertoire {upload_dir} non disponible après {max_attempts} tentatives")
+        raise HTTPException(status_code=500, detail=f"Répertoire {upload_dir} non disponible")
 
-    # Sauvegarde audio
-    if audio:
-        audio_filename = f"{uuid.uuid4()}_{audio.filename}"
-        audio_path = os.path.join("/app/uploads", audio_filename)
-        with open(audio_path, "wb") as f:
-            f.write(await audio.read())
-        audio_link = f"/file/{audio_filename}"
-        file_size = audio.size or 0
+    # Sauvegarde du fichier
+    try:
+        logger.info(f"Tentative de sauvegarde de {file.filename} dans {file_path}")
+        with open(file_path, "wb") as buffer:
+            buffer.write(await file.read())
+        logger.info(f"Fichier {file.filename} sauvegardé avec succès dans {file_path}")
+    except Exception as e:
+        logger.error(f"Erreur lors de la sauvegarde du fichier: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Erreur lors de la sauvegarde: {str(e)}")
 
-    # Sauvegarde vidéo
-    if video:
-        video_filename = f"{uuid.uuid4()}_{video.filename}"
-        video_path = os.path.join("/app/uploads", video_filename)
-        with open(video_path, "wb") as f:
-            f.write(await video.read())
-        video_link = f"/file/{video_filename}"
-        file_size = video.size or 0
-
-    # Création de l'objet Media et insertion dans PostgreSQL
-    media_record = models.Media(
-        name=name,
-        description=description,
-        numberSpeaker=numberSpeaker,
-        audioLink=audio_link,
-        videoLink=video_link,
-        fileSize=str(file_size)
+    # Création de l'entrée dans la base de données
+    new_media = models.Media(
+        name=file.filename,
+        audioLink=file_path if file.content_type.startswith("audio") else None,
+        videoLink=file_path if file.content_type.startswith("video") else None,
+        fileSize=str(file.size),
+        numberSpeaker=1  # Ajuste si nécessaire
     )
-    db.add(media_record)
+    db.add(new_media)
     db.commit()
-    db.refresh(media_record)
+    db.refresh(new_media)
 
-    return media_record
+    return {"message": "Média créé avec succès", "id": new_media.id, "file_path": file_path}
 
 # === ROUTE pour récupérer un fichier uploadé ===
 @app.get("/file/{file_name}")
