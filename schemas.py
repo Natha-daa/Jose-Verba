@@ -1,15 +1,18 @@
+# app/schemas.py
 from pydantic import BaseModel
 from typing import Optional
 
-class MediaBase(BaseModel):
+class MediaCreate(BaseModel):
     name: str
     description: Optional[str] = None
-    number_speaker: Optional[int] = None
+    numberSpeaker: int = 1
+    audioLink: Optional[str] = None
+    videoLink: Optional[str] = None
+    fileSize: Optional[str] = None
 
-class MediaResponse(MediaBase):
+class MediaResponse(MediaCreate):
     id: int
-    audio_path: Optional[str] = None
-    video_path: Optional[str] = None
+    createdAt: Optional[str]
 
     class Config:
         orm_mode = True
