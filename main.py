@@ -59,15 +59,20 @@ pipeline = Pipeline.from_pretrained(
 )
 
 llm = whisper.load_model("turbo")  # ou "small", "medium", "large"
+
+# Crée les tables si elles n'existent pas
+Base.metadata.create_all(bind=engine)
+
 app = FastAPI()
+
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 @app.get("/")
 def root():
     return {"status": "API is running"}
@@ -77,29 +82,21 @@ def health():
     return {"status": "healthy"}
 
 
-prisma = Prisma()
-
-@app.on_event("startup")
-async def startup():
-    await prisma.connect()
-
-@app.on_event("shutdown")
-async def shutdown():
-    await prisma.disconnect()
-
-@app.post("/media")
+# === ROUTE /media ===
+@app.post("/media", response_model=schemas.MediaResponse)
 async def create_media(
     name: str = Form(...),
     description: str = Form(None),
     numberSpeaker: int = Form(1),
     audio: UploadFile = None,
-    video: UploadFile = None
+    video: UploadFile = None,
+    db: Session = Depends(get_db)
 ):
     os.makedirs("uploads", exist_ok=True)
 
     audio_link, video_link, file_size = None, None, 0
 
-    # Sauvegarde de l'audio
+    # Sauvegarde audio
     if audio:
         audio_filename = f"{uuid.uuid4()}_{audio.filename}"
         audio_path = os.path.join("uploads", audio_filename)
@@ -108,7 +105,7 @@ async def create_media(
         audio_link = f"/uploads/{audio_filename}"
         file_size = audio.size or 0
 
-    # Sauvegarde de la vidéo
+    # Sauvegarde vidéo
     if video:
         video_filename = f"{uuid.uuid4()}_{video.filename}"
         video_path = os.path.join("uploads", video_filename)
@@ -117,32 +114,34 @@ async def create_media(
         video_link = f"/uploads/{video_filename}"
         file_size = video.size or 0
 
-    # Insertion dans la base via Prisma
-    media_record = await prisma.media.create(
-        data={
-            "name": name,
-            "description": description,
-            "numberSpeaker": numberSpeaker,
-            "audioLink": audio_link,
-            "videoLink": video_link,
-            "fileSize": file_size
-        }
+    # Création de l'objet Media et insertion dans PostgreSQL
+    media_record = models.Media(
+        name=name,
+        description=description,
+        numberSpeaker=numberSpeaker,
+        audioLink=audio_link,
+        videoLink=video_link,
+        fileSize=str(file_size)
     )
+    db.add(media_record)
+    db.commit()
+    db.refresh(media_record)
 
-    # Retour JSON
-    return JSONResponse(
-        {
-            "id": media_record.id,
-            "name": media_record.name,
-            "description": media_record.description,
-            "numberSpeaker": media_record.numberSpeaker,
-            "audioLink": media_record.audioLink,
-            "videoLink": media_record.videoLink,
-            "fileSize": media_record.fileSize,
-            "message": "Media uploaded and stored successfully 🚀"
-        }
-    )
-    
+    return media_record
+
+# === ROUTE pour récupérer un fichier uploadé ===
+@app.get("/file/{file_name}")
+def get_file(file_name: str):
+    file_path = os.path.join("uploads", file_name)
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="File not found")
+    return FileResponse(path=file_path)
+
+# === ROUTE GET /media pour lister tous les medias ===
+@app.get("/media", response_model=list[schemas.MediaResponse])
+def get_all_media(db: Session = Depends(get_db)):
+    medias = db.query(models.Media).all()
+    return medias    
 class TranscriptionResponse(BaseModel):
     text: str
 
