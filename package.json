@@ -1,12 +1,10 @@
 {
   "devDependencies": {
-    "prisma": "^6.15.0"
   },
   "name": "verbalens-prod",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@prisma/client": "file:../../Téléchargements/client-6.15.0.tgz",
     "c12": "^3.1.0",
     "chokidar": "^4.0.3",
     "citty": "^0.1.6",
