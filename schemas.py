@@ -14,10 +14,7 @@ class MediaBase(BaseModel):
 
 class MediaSchema(MediaBase):
     id: int
-    createdAt: str  # Définir comme chaîne pour la réponse JSON
+    createdAt: datetime  # Utiliser datetime, Pydantic le sérialisera en ISO
 
     class Config:
         from_attributes = True  # Remplace orm_mode pour Pydantic v2
-        json_encoders = {
-            datetime: lambda v: v.isoformat()  # Convertit datetime en chaîne ISO
-        }
