@@ -38,7 +38,7 @@ import uvicorn
 import logging
 import time
 from models import Media  # Assure-toi que le modèle SQLAlchemy est importé
-from schemas import Media as MediaSchema  # Importe le modèle Pydantic
+from schemas import MediaSchema # Importe le modèle Pydantic
 # -----------------------------
 # CONFIG
 # -----------------------------
