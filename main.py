@@ -37,6 +37,8 @@ from db import Base, engine, get_db
 import uvicorn
 import logging
 import time
+from models import Media  # Assure-toi que le modèle SQLAlchemy est importé
+from schemas import Media as MediaSchema  # Importe le modèle Pydantic
 # -----------------------------
 # CONFIG
 # -----------------------------
@@ -156,10 +158,10 @@ async def create_media(
     return {"message": "Média créé avec succès", "id": new_media.id, "file_path": file_path}
     
 # === ROUTE GET /media pour lister tous les medias ===
-@app.get("/media", response_model=list[schemas.MediaResponse])
-def get_all_media(db: Session = Depends(get_db)):
-    medias = db.query(models.Media).all()
-    return medias    
+@app.get("/media", response_model=list[MediaSchema])
+async def get_media(db: Session = Depends(get_db)):
+    media = db.query(Media).all()
+    return media  # FastAPI utilisera le modèle Pydantic pour sérialiser    
 
 class TranscriptionResponse(BaseModel):
     text: str
