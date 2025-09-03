@@ -161,7 +161,7 @@ async def create_media(
 @app.get("/media", response_model=list[MediaSchema])
 async def get_media(db: Session = Depends(get_db)):
     media = db.query(Media).all()
-    return media 
+    return media
 
 class TranscriptionResponse(BaseModel):
     text: str
