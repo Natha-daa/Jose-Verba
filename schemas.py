@@ -17,5 +17,4 @@ class MediaSchema(MediaBase):
     createdAt: str  # Définir comme chaîne pour la réponse JSON
 
     class Config:
-        orm_mode = True  # Permet l'utilisation avec SQLAlchemy
-        # Pydantic convertit automatiquement datetime en chaîne ISO avec orm_mode
+        from_attributes = True  # Remplace orm_mode pour Pydantic v2
