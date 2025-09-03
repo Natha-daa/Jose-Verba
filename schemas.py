@@ -18,3 +18,6 @@ class MediaSchema(MediaBase):
 
     class Config:
         from_attributes = True  # Remplace orm_mode pour Pydantic v2
+        json_encoders = {
+            datetime: lambda v: v.isoformat()  # Convertit datetime en chaîne ISO
+        }
